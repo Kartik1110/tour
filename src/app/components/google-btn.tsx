@@ -11,9 +11,7 @@ export default function GoogleLoginButton(props: { nextUrl?: string }) {
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${location.origin}/auth/callback?next=${
-          props.nextUrl || ""
-        }`,
+        redirectTo: `${process.env.NEXT_PUBLIC_REDIRECT_URL}`,
       },
     });
   };
