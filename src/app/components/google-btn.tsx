@@ -23,7 +23,7 @@ export default function GoogleLoginButton(props: { nextUrl?: string }) {
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: getURL(),
+        redirectTo: location.origin + "/auth/callback",
       },
     });
   };
